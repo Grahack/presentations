@@ -1,0 +1,216 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>Niveaux de l’algo</title>
+        <link rel="stylesheet" href="reveal/css/reveal.min.css">
+        <link rel="stylesheet" href="reveal/css/theme/microalg.css" id="theme">
+
+        <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+        <script>
+            document.write( '<link rel="stylesheet" href="reveal/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="reveal/lib/js/html5shiv.js"></script>
+        <![endif]-->
+
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <link rel="icon" href="visuels/logo_microalg.ico" />
+
+    </head>
+
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section data-markdown data-separator="^\n----*\n" data-vertical="^\n\n" data-charset="utf-8">
+
+                    <script type="text/template">
+&nbsp;
+
+# Algorithmique
+
+&nbsp;
+
+# Différents niveaux de langage
+
+&nbsp;
+
+<div style="text-align: right;font-size: 75%;">Christophe Gragnic, déc. 2015</div>
+<div style="text-align: right;">Lycée Renoir à Angers</div>
+
+---
+&nbsp;
+
+# Niveaux de langage en algo
+
+&nbsp;
+
+* Comprendre l’algorithmique…
+* …grâce à  des concepts…
+* …que vous ne verrez jamais en algo !
+
+---
+
+## Nombre le plus grand ?
+
+<br><br><br>
+
+<div style="text-align: center;">
+  <span style="font-size: 300%">4</span>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <span style="font-size: 500%">2</span>
+</div>
+
+---
+
+## Chiffre le plus grand ?
+
+<br><br><br>
+
+<div style="text-align: center;">
+  <span style="font-size: 300%">4</span>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <span style="font-size: 500%">2</span>
+</div>
+
+---
+
+## Nombre le plus grand ?
+
+<br><br><br>
+
+<div style="text-align: center;">
+  <span style="font-size: 400%">2 ;</span>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <span style="font-size: 400%">7 ;</span>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <span style="font-size: 400%">6 ;</span>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <span style="font-size: 400%">4</span>
+</div>
+
+<br><br><br>
+
+* Facile ?
+
+---
+
+## Facile, mais…
+
+* Comment apprendre à faire ceci à un ordinateur ? <br><br>
+  <textarea style="font-size: 150%" spellcheck="false"></textarea> <br><br>
+* Même question : « Qui a les plus grands pieds ? »
+
+---
+
+## Nécessaire de…
+
+* **Communiquer** les instructions à l’ordinateur.
+* Des instructions **connues de l’ordinateur**.
+* Nous devons savoir ce qu’il sait faire !
+* Et l’ordinateur :
+    * ne sait pas faire grand chose ;
+    * mais le fait vite et bien.
+
+---
+
+## Comme pour tout acte créatif,
+
+## il faut…
+
+* Connaître les **instructions de base**.
+* Savoir lire avant d’écrire.
+
+---
+
+## Chiffre le plus grand ?
+
+<br>
+
+<div style="text-align: center;">
+  <span style="font-size: 300%">4</span>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <span style="font-size: 500%">2</span>
+</div>
+
+<br><br>
+
+## Nombre le plus grand ?
+
+<br>
+
+<div style="text-align: center;">
+  <span style="font-size: 400%">2 ;</span>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <span style="font-size: 400%">7 ;</span>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <span style="font-size: 400%">6 ;</span>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <span style="font-size: 400%">4</span>
+</div>
+
+<br><br>
+
+* Merci de votre attention !
+
+---
+
+# Poubelle
+
+Connaître les briques de base:
+
+* variables, affectation
+* structures conditionnelles: Si…Alors…(Sinon…)
+* structures répétitives: Repeter, Tant_que…Faire…
+* opérations mathématiques, comparaisons
+* affichages (texte ou graphismes)
+
+pas parlé de structures de données, d’efficacité en temps et/ou espace
+</script>
+                </section>
+            </div>
+        </div>
+
+        <script src="reveal/lib/js/head.min.js"></script>
+        <script src="reveal/js/reveal.min.js"></script>
+
+        <script>
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                help: true,
+                progress: true,
+                slideNumber: true,
+                history: true,
+                center: false,
+
+                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'none', // default/cube/page/concave/zoom/linear/fade/none
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'reveal/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'reveal/plugin/markdown/markdown.js',
+                        condition: function() { return !!document.querySelector( '[data-markdown]' ); },
+                        // All list items are fragments, thanks to
+                        // http://stackoverflow.com/questions/13705848/fragments-in-reveal-js-using-markdown?rq=1#15354240
+                        callback: function() {
+                            Array.prototype.forEach.call(document.querySelectorAll('ul > li, ol > li'),
+                            function(ele){ if (ele.className != 'nofragment') ele.className = 'fragment';});
+                        } },
+                    { src: 'reveal/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'reveal/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+                ],
+                minScale: 1,
+                maxScale: 1
+            });
+        </script>
+    </body>
+</html>
