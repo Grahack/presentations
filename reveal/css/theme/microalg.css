@@ -40,6 +40,10 @@ body {
     position: relative;
     z-index: -2; }
 
+.reveal pre {
+	font-size: 115%;
+	box-shadow: none;
+}
 .reveal img {
     display: block;
     margin: 0 auto; 
