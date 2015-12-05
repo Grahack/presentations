@@ -186,7 +186,19 @@
 
 # Le code
 
-    (imp)
+    (Affecter_a ma_liste (Liste 4 7 2 6))
+
+    (!!! "Premier candidat pour être le maximum.")
+    (Affecter_a max_temporaire (Retirer_de ma_liste))
+
+    (Tant_que (Non (Vide? ma_liste))
+     Faire
+        (Affecter_a nombre_courant (Retirer_de ma_liste))
+        (Si (> nombre_courant max_temporaire)
+         Alors
+            (Affecter_a max_temporaire nombre_courant)
+        )
+    )
 
 ---
 
@@ -198,7 +210,19 @@
 
 # Le code
 
-    (imp)
+    (Affecter_a ma_liste (Liste 4 7 2 6))
+
+    (Affecter_a candidat_au_max 0)
+    (Affecter_a compteur 1)
+
+    (Tant_que (<= compteur (Longueur ma_liste))
+     Faire
+        (Si (> (Nieme ma_liste compteur) candidat_au_max)
+         Alors
+            (Affecter_a candidat_au_max (Nieme ma_liste compteur))
+        )
+        (Affecter_a compteur (+ compteur 1))
+    )
 
 ---
 
@@ -209,7 +233,20 @@
 
 # Le code
 
-    (rec)
+    (Definir (Max_d_une_liste liste)
+        (Si (= (Longueur liste) 1)
+         Alors
+             (Retourner (Tete liste))
+         Sinon
+             (Retourner
+                 (Max_de_2_nbres
+                     (Tete liste)
+                     (Max_d_une_liste (Queue liste))
+                 )
+             )
+        )
+    )
+    (Afficher (Max_d_une_liste (Liste 4 7 2 6)))
 
 ---
 
