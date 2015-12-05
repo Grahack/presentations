@@ -1,0 +1,117 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style type="text/css"><![CDATA[
+      line, rect, circle {
+        fill: none;
+        stroke: black;
+        stroke-width: 2
+      }
+      text {
+        font-size: 20pt;
+      }
+    ]]></style>
+  </defs>
+  <marker id="triangle"
+    viewBox="0 0 10 10" refX="0" refY="5"
+    orient="auto">
+    <path d="M 0 0 L 10 5 L 0 10 z" />
+  </marker>
+  <text x="0" y="28">Liste :</text>
+  <text x="0" y="168">Valeur lue :</text>
+  <text id="lue" x="130" y="168"></text>
+  <text x="60" y="198">Max :</text>
+  <text id="max" x="130" y="198"></text>
+  <g id="v1">
+    <rect x="0" y="0" width="35" height="35" />
+    <text x="10" y="25">4</text>
+  </g>
+  <g id="v2">
+    <rect x="0" y="0" width="35" height="35" />
+    <text x="10" y="25">7</text>
+  </g>
+  <g id="v3">
+    <rect x="0" y="0" width="35" height="35" />
+    <text x="10" y="25">2</text>
+  </g>
+  <g id="v4">
+    <rect x="0" y="0" width="35" height="35" />
+    <text x="10" y="25">6</text>
+  </g>
+  <g id="arrow">
+    <line x1="98" y1="100" x2="98" y2="50" marker-end="url(#triangle)" />
+  </g>
+  <script type="text/javascript"><![CDATA[
+    var nodes_coords = [[80, 5], [120, 5], [160, 5], [200, 5]];
+    var nodes = [];
+    nodes_coords.forEach(function (elt, idx) {
+        var node_num = idx + 1;
+        // nodes
+        var node = document.getElementById("v" + node_num);
+        var coords = nodes_coords[idx];
+        node.setAttribute('transform', 'translate('+coords[0]+','+coords[1]+')');
+        nodes.push(node);
+    });
+    var arrow = document.getElementById('arrow');
+    var arrow_x = 0;
+    var max_candidate = document.getElementById('max');
+    var read_val = document.getElementById('lue');
+    function draw() {
+      if (counter == 0) {
+        max_candidate.textContent = "?";
+        arrow_x = 1000;
+      } else if (counter == 1) {
+        arrow_x = 0;
+      } else if (counter == 2) {
+        read_val.textContent = "4";
+      } else if (counter == 3) {
+        read_val.textContent = "4 on garde";
+      } else if (counter == 4) {
+        max_candidate.textContent = "4 ?";
+      } else if (counter == 5) {
+        arrow_x += 40;
+        read_val.textContent = "7";
+      } else if (counter == 6) {
+        read_val.textContent = "7 on garde";
+      } else if (counter == 7) {
+        max_candidate.textContent = "7 ?";
+      } else if (counter == 8) {
+        arrow_x += 40;
+        read_val.textContent = "2";
+      } else if (counter == 9) {
+        read_val.textContent = "2 on jette";
+      } else if (counter == 10) {
+        arrow_x += 40;
+        read_val.textContent = "6";
+      } else if (counter == 11) {
+        read_val.textContent = "6 on jette";
+      } else if (counter == 12) {
+        arrow_x = 1000;
+        read_val.textContent = "";
+      } else if (counter == 13) {
+        max_candidate.textContent = "7";
+      }
+      arrow.setAttribute('transform', 'translate(' + arrow_x + ', 0)');
+    }
+    var counter = 0;
+    function step() {
+      draw();
+      counter += 1;
+      counter %= 15;
+      setTimeout(step, 1000);
+    }
+    step();
+  ]]></script>
+</svg>
+<!--
+* On regarde la valeur du premier nombre : 4.
+* Il est possible qu’il soit le plus grand des nombres.
+* On le compare au suivant : 7.
+* Entre 4 et 7, on garde le plus grand des deux : 7.
+* Il est possible qu’il soit le plus grand des nombres.
+* On le compare au suivant : 2.
+* Entre 4 et 7, on garde le plus grand des deux : 7.
+* Il est possible qu’il soit le plus grand des nombres.
+* On le compare au suivant : 6.
+* Entre 4 et 7, on garde le plus grand des deux : 7.
+* On les a tous passés en revue, 7 est bien le plus grand des nombres.
+-->
