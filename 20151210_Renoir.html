@@ -181,7 +181,7 @@
 
 # Le code
 
-    (max 4 7 2 6)
+    (max  4  7  2  6)
 
 ---
 
@@ -190,7 +190,7 @@
 * Algo classique de lycée
 * Sans compteur
 * Instructions nécessaires :
-    * `Declarer` et `Affecter_a` (gestion des variables)
+    * `Declarer` et `Affecter_à` (gestion des variables)
     * `Tant_que … Faire …` (répétition)
     * `Retirer_de`, ou `Tete` et `Queue` (parcours de la liste)
     * `>` (comparaison)
@@ -199,17 +199,17 @@
 
 # Le code
 
-    (Affecter_a ma_liste (Liste 4 7 2 6))
+    (Affecter_à  ma_liste  (Liste  4  7  2  6))
 
-    (!!! "Premier candidat pour être le maximum.")
-    (Affecter_a max_temporaire (Retirer_de ma_liste))
+    (!!!  "Premier candidat pour être le maximum.")
+    (Affecter_à  max_temporaire  (Retirer_de  ma_liste))
 
-    (Tant_que (Non (Vide? ma_liste))
+    (Tant_que  (Non  (Vide?  ma_liste))
      Faire
-        (Affecter_a nombre_courant (Retirer_de ma_liste))
-        (Si (> nombre_courant max_temporaire)
+        (Affecter_à  nombre_courant  (Retirer_de  ma_liste))
+        (Si  (>  nombre_courant  max_temporaire)
          Alors
-            (Affecter_a max_temporaire nombre_courant)
+            (Affecter_à  max_temporaire  nombre_courant)
         )
     )
 
@@ -220,7 +220,7 @@
 * Algo classique de lycée
 * Avec compteur
 * Instructions nécessaires :
-    * `Declarer` et `Affecter_a` (gestion des variables)
+    * `Declarer` et `Affecter_à` (gestion des variables)
     * `Tant_que … Faire …` et `Longueur` (répétition)
     * `Nieme` (lire un élément de la liste)
     * `>` (comparaison)
@@ -229,18 +229,18 @@
 
 # Le code
 
-    (Affecter_a ma_liste (Liste 4 7 2 6))
+    (Affecter_à  ma_liste  (Liste  4  7  2  6))
 
-    (Affecter_a candidat_au_max 0)
-    (Affecter_a compteur 1)
+    (Affecter_à  candidat_au_max  0)
+    (Affecter_à  compteur  1)
 
-    (Tant_que (<= compteur (Longueur ma_liste))
+    (Tant_que  (<=  compteur  (Longueur  ma_liste))
      Faire
-        (Si (> (Nieme ma_liste compteur) candidat_au_max)
+        (Si  (>  (Nieme  ma_liste  compteur)  candidat_au_max)
          Alors
-            (Affecter_a candidat_au_max (Nieme ma_liste compteur))
+            (Affecter_à  candidat_au_max  (Nieme  ma_liste  compteur))
         )
-        (Affecter_a compteur (+ compteur 1))
+        (Affecter_à  compteur  (+  compteur  1))
     )
 
 ---
@@ -258,20 +258,20 @@
 
 # Le code
 
-    (Definir (Max_d_une_liste liste)
-        (Si (= (Longueur liste) 1)
+    (Definir  (Max_d_une_liste  liste)
+        (Si  (=  (Longueur  liste)  1)
          Alors
-             (Retourner (Tete liste))
+             (Retourner  (Tete  liste))
          Sinon
              (Retourner
                  (Max_de_2_nbres
-                     (Tete liste)
-                     (Max_d_une_liste (Queue liste))
+                     (Tete  liste)
+                     (Max_d_une_liste  (Queue  liste))
                  )
              )
         )
     )
-    (Afficher (Max_d_une_liste (Liste 4 7 2 6)))
+    (Afficher  (Max_d_une_liste  (Liste  4  7  2  6)))
 
 ---
 
