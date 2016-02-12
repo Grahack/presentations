@@ -22,6 +22,20 @@
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
         <link rel="icon" href="visuels/logo_microalg.ico" />
 
+        <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            extensions: ["tex2jax.js","fp.js"],
+            MathMenu: {
+                showLocale: false,
+            },
+            jax: ["input/TeX","output/HTML-CSS"],
+            tex2jax: {
+                inlineMath: [['$','$']],
+                displayMath: [['$$','$$']],
+                }
+            });
+        </script>
+        <script type="text/javascript" src="mathjax/MathJax.js?locale=fr"></script>
     </head>
 
     <body>
@@ -193,7 +207,11 @@
                         } },
                     { src: 'reveal/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
                     { src: 'reveal/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'plugin/math/math.js', async: true }
                 ],
+                math: {
+                        mathjax: 'mathjax/MathJax.js',
+                        config: 'TeX-AMS_HTML-full'},
                 minScale: 1,
                 maxScale: 1
             });
