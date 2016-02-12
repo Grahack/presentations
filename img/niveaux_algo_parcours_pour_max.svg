@@ -10,6 +10,11 @@
       text {
         font-size: 20pt;
       }
+      #btn {
+        stroke: #fff;
+        fill: #fff;
+        fill-opacity: 0;
+      }
     ]]></style>
   </defs>
   <marker id="triangle"
@@ -41,6 +46,7 @@
   <g id="arrow">
     <line x1="98" y1="100" x2="98" y2="50" marker-end="url(#triangle)" />
   </g>
+  <rect id="btn" x="0" y="0" width="400" height="200" onclick="step();"/>
   <script type="text/javascript"><![CDATA[
     var nodes_coords = [[80, 5], [120, 5], [160, 5], [200, 5]];
     var nodes = [];
@@ -98,9 +104,7 @@
       draw();
       counter += 1;
       counter %= 15;
-      setTimeout(step, 1000);
     }
-    step();
   ]]></script>
 </svg>
 <!--
