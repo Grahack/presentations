@@ -136,24 +136,30 @@
 * Étalonnage des positions
 * Recueil des coordonnées du mobile au cours du temps
 * Modélisations de $y=f(x)$, de $v_x(t)$, et de $v_y(t)$
+    * avec type donné en indice à Generis
 * Calculs à partir des valeurs recueillies
     * $a_x$ et $a_y$
     * $v_x(0)$, $V_y(0)$ et $\alpha$
     * les coefficients de la parabole
+* Confrontation
 
 ---
 
 # MicroAlg
+
+Qu’est-ce ?
 
 * Langage de programmation pour **grands débutants**…
 * …et suite d’**outils** pour l’utiliser.
 * Encore jeune mais déjà capable.
 * **Première marche** avant un vrai langage.
-* Sous-première marche : le **Club des Expressions**
+* Sous-première marche : le **Club des Expressions**.
 
 ---
 
 # MicroAlg
+
+Quelques fonctionnalités :
 
 * En **français** avec **peu de mots-clefs**
 * « Pseudo-code exécutable »
@@ -163,6 +169,9 @@
     * enseignants
     * apprenants
     * diverses configuration des échantillons
+        * blocs
+        * graphiques
+        * code caché
 
 ---
 
@@ -225,10 +234,24 @@
 
 ---
 
+# Ajustement du repère
+
+<img alt="copie écran bornes repère" width="400"
+     src="img/modeles-chute/graphique-mauvaise-taille-cercles.png" />
+
+---
+
 # Taille cercles
 
 <img alt="copie écran taille cercles" width="400"
      src="img/modeles-chute/graphique-mauvaise-taille-cercles.png" />
+
+---
+
+# Taille cercles
+
+<img alt="copie écran taille cercles" width="400"
+     src="img/modeles-chute/graphique-bonne-taille-cercles.png" />
 
 ---
 
@@ -243,8 +266,8 @@
 # Algo modèle discret
 
 * À corriger :
-    * remplacer certaines constantes par des variables
-    * faire évoluer ces variables
+    * Mettre en place le PFD…
+    * … avec des indices !
 
 ---
 
@@ -252,7 +275,7 @@
 
 * Indices :
     * en l’état, quel est le type du mouvement ?
-    * si on veut que $V_x$ et $V_y$ ne soient pas constants…
+    * si on veut que $V_x$ et $V_y$ ne soient pas constantes…
     * …et comment mettre à jour ces variables ?
     * $V = \frac{D}{T}$, donc $D = …$
 
