@@ -67,32 +67,54 @@
     * expérience en algorithmique
     * logiciel utilisé
 * Moi
-    * prof de maths
+    * prof de maths au lycée Carcouët
     * bcp d’informatique (≠ bureautique !) depuis 2005
-    * joindre les deux depuis 2009 et 2012
+    * joindre maths et info depuis :
+        * 2009 avec l’algo en seconde
+        * 2012 avec ISN (spé de terminale S) et BTS SIO (info)
 
 ---
 
 # Plan de la présentation
 
-* Un TP de physique
-    * mise en place du décor
 * Présentation rapide de MicroAlg
-* Un TP d’algorithmique
+* Un TP de physique (terminale S)
+    * mise en place du décor
+* Un TP d’algorithmique (tous niveaux)
     * prise en main
-    * algorithmes à compléter :
-        * valeurs recueillies, modèle discret puis continu
-    * confrontation des trois
+    * algorithmes à compléter
 * Conclusion et discussion
 
 ---
 
 # Un TP de physique
 
-* Préalable théorique : application du PFD continu
-    * $\Sigma \vec F = m \vec a$
-    * $x(t)$ et $y(t)$
-    * $y=f(x)$
+* Préalable théorique, le PFD : $\Sigma \vec F = m \vec a$
+    * projeté sur les axes (horizontal et vertical) :
+        * $m a_x(t) = 0$
+        * $m a_y(t) = -P$
+    * $P = m × a_G$ donc :
+        * $m a_x(t) = 0$
+        * $m a_y(t) = -m × a_G$
+    * c’est-à-dire :
+        * $a_x(t) = 0$
+        * $a_y(t) = -a_G$
+
+---
+
+# Un TP de physique
+
+* À résoudre (en temps continu) :
+    * $a_x(t) = 0$
+    * $a_y(t) = -a_G$
+* intégré une fois (avant le cours de maths !) :
+    * $v_x(t) = \text{cste} = v_x(0)$
+    * $v_y(t) = -a_G × t + \text{cste} = -a_G × t + v_y(0)$
+* et encore une fois :
+    * $x(t) = v_x(0) × t$
+    * $y(t) = -\frac{a_G}{2} × t^2 + v_y(0) × t$
+* avec $t = \frac{x}{v_x(0)}$
+    * $y=-\frac{a_G}{2v_x(0)^2} × x^2 + \frac{v_y(0)}{v_x(0)} × x$
 
 ---
 
@@ -135,12 +157,13 @@
 # Un TP de physique
 
 * Import dans un « super-tableur »
-    * Generis/Cineris
-    * sinon [Regressi](http://jean-michel.millet.pagesperso-orange.fr/regressi.html)
+    * Generis/Cineris (sinon [Regressi](http://jean-michel.millet.pagesperso-orange.fr/regressi.html))
 * Étalonnage des positions
+    * quel point de l’image est l’origine du repère
+    * correspondance distance à l’écran / distance réelle
 * Recueil des coordonnées du mobile au cours du temps
-* Modélisations de $y=f(x)$, de $v_x(t)$, et de $v_y(t)$
-    * avec type donné en indice à Generis
+* Modélisations de $y=f(x)$, de $v_x(t)$, et de $v_y(t)$ par Généris
+    * on impose un type de fonction (polynôme de degré 2 ou 1)
     * $y = -0,92 x^2 + 1,8 x$
     * $v_x(t) = 2,22$
     * $v_y(t) = -9,1 t + 4,64$
@@ -158,7 +181,7 @@
 
 * Extraction et calculs :
     * $a_x$ et $a_y$
-    * $v_x(0)$, $V_y(0)$ et $\alpha$
+    * $v_x(0)$, $v_y(0)$
     * les coefficients de la parabole théorique :
     * $y = -\frac{a_G}{2 v_x(0)^2} x^2 + \frac{v_y(0)}{v_x(0)} x$
 * Confrontation avec la parabole relevée :
@@ -172,8 +195,9 @@ Qu’est-ce ?
 
 * Langage de programmation pour **grands débutants**…
 * …et suite d’**outils** pour l’utiliser.
+* Créé dans un but pédagogique
 * Encore jeune mais déjà capable.
-* **Première marche** avant un vrai langage.
+* **Première marche** avant un langage professionnel.
 * Sous-première marche : le **Club des Expressions**.
 
 ---
@@ -184,9 +208,19 @@ Quelques fonctionnalités :
 
 * En **français** avec **peu de mots-clefs**
 * « Pseudo-code exécutable »
+    * pseudo-code ?
 * Programmable en déplaçant des **blocs**
+    * comme Scratch
 * Version **web** ou **locale**
+    * [microalg.info](http://microalg.info)
+* Intégrable à d’autres sites ou systèmes
+
+---
+
+# MicroAlg
+
 * Système de publication : la « **galerie** »
+    * web, un navigateur connecté suffit
     * enseignants
     * apprenants
     * diverses configuration des échantillons
@@ -199,7 +233,7 @@ Quelques fonctionnalités :
 # Prise en main de la galerie
 
 * Choix **pseudo**
-    * parfum de glace
+    * parfum de glace (une ou deux boules)
 * **Page mère**, que chaque élève copie
     * simples boutons
 * **Modification mineure** d’un programme
@@ -232,7 +266,8 @@ Quelques fonctionnalités :
 
 # Algo valeurs recueillies
 
-* Indices :
+* Indices au compte-gouttes pour différencier
+* Idées d’indices :
     * inspecter le déroulement avec des affichages
     * inspecter le `Tant_que` avec un affichage
     * afficher la variable testée dans le `Tant_que`
@@ -276,7 +311,7 @@ Quelques fonctionnalités :
 
 ---
 
-# Algo modèle discret
+# Algo en temps discret
 
 * Épicentre du TP
 * Squelette de programme à modifier
@@ -284,14 +319,14 @@ Quelques fonctionnalités :
 
 ---
 
-# Algo modèle discret
+# Algo en temps discret
 
 <img alt="copie écran mouvement rectiligne uniforme" width="400"
      src="img/modeles-chute/graphique-rect-unif.png" />
 
 ---
 
-# Algo modèle discret
+# Algo en temps discret
 
 * À corriger :
     * Mettre en place le PFD…
@@ -299,10 +334,10 @@ Quelques fonctionnalités :
 
 ---
 
-# Algo modèle discret
+# Algo en temps discret
 
-* Indices :
-    * en l’état, quel est le type du mouvement ?
+* Idées d’indices :
+    * quel est le type du mouvement avant votre modification ?
     * si on veut que $v_x$ et $v_y$ ne soient pas constantes…
     * …et comment mettre à jour ces variables ?
     * $V = \frac{D}{T}$, donc $D = …$
@@ -315,42 +350,55 @@ Quelques fonctionnalités :
 
 ---
 
-# Algo modèle discret
+# Algo en temps discret
 
 <img alt="copie écran mouvement parabolique faux" width="400"
      src="img/modeles-chute/graphique-parabole-discrete-fausse.png" />
 
 ---
 
-# Algo modèle discret
+# Algo en temps discret
 
 * Extase
 * On ne tape pas l’équation de la parabole, et pourtant…
+* …
 
 ---
 
-# Algo modèle discret
+# Algo en temps discret
 
-* Mais mauvaise conduite !
-    * Dans les jeux, l’unité habituelle n’est que le pixel…
-    * …pour la position, mais aussi vitesse !
-    * Utiliser $\Delta x$ et $\Delta y$ plutôt que $V_x$ et $V_y$.
+Mais mauvais départ !
+
+* Dans les jeux simples, pas de volonté de coller au réel.
+* L’unité habituelle n’est que le pixel…
+* …pour la position…
+* mais aussi pour la vitesse !
+    * alors qu’on devrait parler de pixel/image.
+* Utiliser $\Delta x$ et $\Delta y$ plutôt que $v_x$ et $v_y$.
+    * c’est-à-dire `dx` et `dy` plutôt que `vx` et `vy`.
+* Embrouille inextricable à cause de `(+ x vx)` et `(+ y vy)`
 
 ---
 
 # Suite du TP
 
+* Inachevé
+    * Pas d’affichage de la parabole modèle
+    * Pas de superposition des trois (j’avais visé haut)
 * Programmation de la fin devant la classe, avec leur aide.
 * Email personnel avec indications pour finir pendant les vacances.
-* Six ont modifié leur page, d’autres ont essayé sans modifier.
+* 6 sur 32 ont modifié leur page, d’autres ont essayé sans modifier.
 
 ---
 
 # Conclusions
 
-* Prise en main pour enregistrer le travail : fastidieux.
+* Prise en main de la galerie : fastidieux.
     * Sur deux séances, sauf si prise en main déjà faite.
 * À rapprocher de la méthode d’Euler
+    * Résolution d’équations différentielles
+    * Assimilation de la courbe à sa tangente
+    * Traditionnellement pour *exp* et *ln*
 
 ---
 
@@ -359,7 +407,7 @@ Quelques fonctionnalités :
 # Merci
 
 * Stéphane Choimet pour sa confiance
-* Jean-Philippe Rouquès pour ses suggestions
+* Jean-Philippe Rouquès pour ses précieuses suggestions
 
 ---
 
