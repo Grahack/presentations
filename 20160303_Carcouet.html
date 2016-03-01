@@ -40,18 +40,9 @@
 
 &nbsp;
 
-<div style="text-align: right; font-size: 75%;">Christophe Gragnic, déc. 2015</div>
-<div style="text-align: right;">Lycée Renoir à Angers</div>
+<div style="text-align: right; font-size: 75%;">Christophe Gragnic, mars 2016</div>
+<div style="text-align: right;">Lycée Carcouët à Nantes</div>
 <div style="text-align: right; font-size: 75%;"><a href="http://galerie.microalg.info/profgra:peda:niveaux_algo">Exemples interactifs</a></div>
-
----
-
-&nbsp;
-
-#  Comprendre l’algorithmique…
-
-* …grâce à  des concepts…
-* …que vous ne verrez jamais en algo !
 
 ---
 
@@ -102,9 +93,7 @@
   &nbsp;&nbsp;&nbsp;&nbsp;
   <span style="font-size: 400%">7 ;</span>
   &nbsp;&nbsp;&nbsp;&nbsp;
-  <span style="font-size: 400%">2 ;</span>
-  &nbsp;&nbsp;&nbsp;&nbsp;
-  <span style="font-size: 400%">6</span>
+  <span style="font-size: 400%">2</span>
 </div>
 
 <br><br><br>
@@ -138,7 +127,7 @@
 # « Qui a les plus grands pieds ? »
 
 * Comparaison des problèmes
-    * Liste de quatre nombres : 4 ; 7 ; 2 ; 6.
+    * Liste de trois nombres : 4 ; 7 ; 2.
     * Liste de ??? nombres :
         * 39 ; 44 ; 41 ; 37 ; 44 ; 39 ; 42…
         * 38 ; 42 ; 45 ; 37 ; 38 ; 40 ; 36…
@@ -180,13 +169,13 @@
 
 # Le code
 
-    (max  4  7  2  6)
+    (max  4  7  2)
 
 ---
 
 # Deuxième méthode
 
-* Algo classique de lycée
+* Algorithme classique de lycée
 * Sans compteur
 * Instructions nécessaires :
     * `Declarer` et `Affecter_à` (gestion des variables)
@@ -198,7 +187,7 @@
 
 # Le code
 
-    (Affecter_à  ma_liste  (Liste  4  7  2  6))
+    (Affecter_à  ma_liste  (Liste  4  7  2))
 
     (!!!  "Premier candidat pour être le maximum.")
     (Affecter_à  max_temporaire  (Retirer_de  ma_liste))
@@ -215,7 +204,7 @@
 
 # Deuxième méthode avec compteur
 
-* Algo classique de lycée
+* Algorithme classique de lycée
 * Instructions nécessaires :
     * `Declarer` et `Affecter_à` (gestion des variables)
     * `Tant_que … Faire …` et `Longueur` (répétition)
@@ -226,16 +215,16 @@
 
 # Le code
 
-    (Affecter_à  ma_liste  (Liste  4  7  2  6))
+    (Affecter_à  ma_liste  (Liste  4  7  2))
 
-    (Affecter_à  candidat_au_max  0)
+    (Affecter_à  candidat  0)
     (Affecter_à  compteur  1)
 
     (Tant_que  (<=  compteur  (Longueur  ma_liste))
      Faire
-        (Si  (>  (Nieme  ma_liste  compteur)  candidat_au_max)
+        (Si  (>  (Nieme  ma_liste  compteur)  candidat)
          Alors
-            (Affecter_à  candidat_au_max  (Nieme  ma_liste  compteur))
+            (Affecter_à  candidat  (Nieme  ma_liste  compteur))
         )
         (Affecter_à  compteur  (+  compteur  1))
     )
@@ -244,12 +233,15 @@
 
 # Troisième méthode
 
-* Algo récursif
+* Algorithme récursif
+    * pas classique au lycée !
 * Instructions nécessaires :
     * Pas de gestion des variables dans l’algo !
     * Pas de structure répétitive comme `Tant_que` !
     * Pas de structure conditionnelle comme `Si` !
-    * `Definir` et `Retourner` pour nommer et appeler du code
+    * `Definir` pour nommer du code :
+        * on définit une nouvelle commande
+        * besoin aussi de `Retourner`
     * `Max_de_2_nbres`
 
 
@@ -268,7 +260,7 @@
              )
         )
     )
-    (Afficher  (Max_d_une_liste  (Liste  4  7  2  6)))
+    (Afficher  (Max_d_une_liste  (Liste  4  7  2)))
 
 ---
 
@@ -342,9 +334,7 @@
   &nbsp;&nbsp;&nbsp;&nbsp;
   <span style="font-size: 400%">7 ;</span>
   &nbsp;&nbsp;&nbsp;&nbsp;
-  <span style="font-size: 400%">2 ;</span>
-  &nbsp;&nbsp;&nbsp;&nbsp;
-  <span style="font-size: 400%">6</span>
+  <span style="font-size: 400%">2</span>
 </div>
 
 <br><br>

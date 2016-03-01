@@ -39,16 +39,12 @@
     <rect x="0" y="0" width="35" height="35" />
     <text x="10" y="25">2</text>
   </g>
-  <g id="v4">
-    <rect x="0" y="0" width="35" height="35" />
-    <text x="10" y="25">6</text>
-  </g>
   <g id="arrow">
-    <line x1="98" y1="100" x2="98" y2="50" marker-end="url(#triangle)" />
+    <line x1="1098" y1="100" x2="1098" y2="50" marker-end="url(#triangle)" />
   </g>
   <rect id="btn" x="0" y="0" width="400" height="200" onclick="step();"/>
   <script type="text/javascript"><![CDATA[
-    var nodes_coords = [[80, 5], [120, 5], [160, 5], [200, 5]];
+    var nodes_coords = [[80, 5], [120, 5], [160, 5]];
     var nodes = [];
     nodes_coords.forEach(function (elt, idx) {
         var node_num = idx + 1;
@@ -65,9 +61,8 @@
     function draw() {
       if (counter == 0) {
         max_candidate.textContent = "?";
-        arrow_x = 1000;
       } else if (counter == 1) {
-        arrow_x = 0;
+        arrow_x = -1000;
       } else if (counter == 2) {
         read_val.textContent = "4";
       } else if (counter == 3) {
@@ -87,14 +82,9 @@
       } else if (counter == 9) {
         read_val.textContent = "2 on jette";
       } else if (counter == 10) {
-        arrow_x += 40;
-        read_val.textContent = "6";
-      } else if (counter == 11) {
-        read_val.textContent = "6 on jette";
-      } else if (counter == 12) {
         arrow_x = 1000;
         read_val.textContent = "";
-      } else if (counter == 13) {
+      } else if (counter == 11) {
         max_candidate.textContent = "7";
       }
       arrow.setAttribute('transform', 'translate(' + arrow_x + ', 0)');
@@ -103,7 +93,7 @@
     function step() {
       draw();
       counter += 1;
-      counter %= 15;
+      counter %= 12;
     }
   ]]></script>
 </svg>
@@ -114,9 +104,6 @@
 * Entre 4 et 7, on garde le plus grand des deux : 7.
 * Il est possible qu’il soit le plus grand des nombres.
 * On le compare au suivant : 2.
-* Entre 4 et 7, on garde le plus grand des deux : 7.
-* Il est possible qu’il soit le plus grand des nombres.
-* On le compare au suivant : 6.
-* Entre 4 et 7, on garde le plus grand des deux : 7.
+* Entre 7 et 2, on garde le plus grand des deux : 7.
 * On les a tous passés en revue, 7 est bien le plus grand des nombres.
 -->
