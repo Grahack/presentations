@@ -33,6 +33,8 @@ body {
     white-space: nowrap; }
 
 .reveal pre code {
+    margin: 0;
+    padding: 0;
     white-space: pre;
     position: relative;
     z-index: -2; }
