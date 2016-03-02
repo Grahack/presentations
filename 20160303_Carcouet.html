@@ -110,7 +110,7 @@
 
 ---
 
-# De quoi on parle
+# De quoi parle-t-on ?
 
 * Pas de :
     * représentation des données
@@ -162,6 +162,38 @@
 
 ---
 
+# Langages informatiques
+
+* Plus de détails lors de **Tire ta Langue**
+* Langage machine
+    * très bas niveau, « proche du métal »
+    * très fastidieux
+* Assembleur
+    * très proche du langage machine
+* Langages compilés
+    * le code source est traduit en langage machine
+    * Grace Hopper, a inventé le compilateur
+* Langages interprétés
+    * un programme lit le code source et l’exécute au fur et à mesure
+
+---
+
+# Grace Hopper
+
+<img alt="Grace Hopper devant un UNIVAC" src="img/Grace_Hopper_and_UNIVAC.jpg">
+
+---
+
+# Grace Hopper
+
+À partir de 1957, elle travaille pour IBM, où elle défend l'idée qu'un
+programme **devrait pouvoir être écrit dans un langage proche de l'anglais**
+plutôt que d'être calqué sur le langage machine, comme l'assembleur.
+
+<div style="text-align: right; font-size: 75%;">Wikipedia</div>
+
+---
+
 # Première méthode
 
 * Le problème est résolu dans le langage
@@ -189,15 +221,14 @@
 
     (Affecter_à  ma_liste  (Liste  4  7  2))
 
-    (!!!  "Premier candidat pour être le maximum.")
-    (Affecter_à  max_temporaire  (Retirer_de  ma_liste))
+    (Affecter_à  candidat  (Retirer_de  ma_liste))
 
     (Tant_que  (Non  (Vide?  ma_liste))
      Faire
         (Affecter_à  nombre_courant  (Retirer_de  ma_liste))
-        (Si  (>  nombre_courant  max_temporaire)
+        (Si  (>  nombre_courant  candidat)
          Alors
-            (Affecter_à  max_temporaire  nombre_courant)
+            (Affecter_à  candidat  nombre_courant)
         )
     )
 
@@ -239,28 +270,211 @@
     * Pas de gestion des variables dans l’algo !
     * Pas de structure répétitive comme `Tant_que` !
     * Pas de structure conditionnelle comme `Si` !
+    * Manipulation de listes :
+        * `Tete` et `Queue`
     * `Definir` pour nommer du code :
         * on définit une nouvelle commande
         * besoin aussi de `Retourner`
     * `Max_de_2_nbres`
 
 
+# Troisième méthode
+
+* Les nouvelles commandes que l’on définit soi-même :
+    * complètent le langage
+    * ajoutent des couches de plus haut niveau
+
+
 # Le code
 
-    (Definir  (Max_d_une_liste  liste)
+    (Definir  (Max_liste  liste)
         (Si  (=  (Longueur  liste)  1)
          Alors
              (Retourner  (Tete  liste))
          Sinon
              (Retourner
-                 (Max_de_2_nbres
+                 (Max_2_nbr
                      (Tete  liste)
-                     (Max_d_une_liste  (Queue  liste))
+                     (Max_liste  (Queue  liste))
                  )
              )
         )
     )
     (Afficher  (Max_d_une_liste  (Liste  4  7  2)))
+
+
+# Déroulement des appels
+
+    (Max_liste  (Liste  4  7  2))
+
+
+# Déroulement des appels
+
+    (Max_liste  (Liste  4  7  2))
+                 _______↓  ====
+                ↓                      ====
+    (Max_2_nbr  4  (Max_liste  (Liste  7  2)))
+
+
+# Déroulement des appels
+
+    (Max_liste  (Liste  4  7  2))
+                 _______↓  ====
+                ↓                      ====
+    (Max_2_nbr  4  (Max_liste  (Liste  7  2)))
+                                _______↓  =
+                               ↓                      =
+    (Max_2_nbr  4  (Max_2_nbr  7  (Max_liste  (Liste  2))))
+
+
+# Déroulement des appels
+
+    (Max_liste  (Liste  4  7  2))
+                 _______↓  ====
+                ↓                      ====
+    (Max_2_nbr  4  (Max_liste  (Liste  7  2)))
+                                _______↓  =
+                               ↓                      =
+    (Max_2_nbr  4  (Max_2_nbr  7  (Max_liste  (Liste  2))))
+    (Max_2_nbr  4  (Max_2_nbr  7  2))
+
+
+# Déroulement des appels
+
+    (Max_liste  (Liste  4  7  2))
+                 _______↓  ====
+                ↓                      ====
+    (Max_2_nbr  4  (Max_liste  (Liste  7  2)))
+                                _______↓  =
+                               ↓                      =
+    (Max_2_nbr  4  (Max_2_nbr  7  (Max_liste  (Liste  2))))
+    (Max_2_nbr  4  (Max_2_nbr  7  2))
+    (Max_2_nbr  4  7)
+
+
+# Déroulement des appels
+
+    (Max_liste  (Liste  4  7  2))
+                 _______↓  ====
+                ↓                      ====
+    (Max_2_nbr  4  (Max_liste  (Liste  7  2)))
+                                _______↓  =
+                               ↓                      =
+    (Max_2_nbr  4  (Max_2_nbr  7  (Max_liste  (Liste  2))))
+    (Max_2_nbr  4  (Max_2_nbr  7  2))
+    (Max_2_nbr  4  7)
+    7
+
+
+# Déroulement des appels
+
+    (ML  (Liste  4  7  5  8  3))
+
+
+# Déroulement des appels
+
+    (ML  (Liste  4  7  5  8  3))
+    (M2  4  (ML  (Liste  7  5  8  3)))
+
+
+# Déroulement des appels
+
+    (ML  (Liste  4  7  5  8  3))
+    (M2  4  (ML  (Liste  7  5  8  3)))
+    (M2  4  (M2  7  (ML  (Liste  5  8  3))))
+
+
+# Déroulement des appels
+
+    (ML  (Liste  4  7  5  8  3))
+    (M2  4  (ML  (Liste  7  5  8  3)))
+    (M2  4  (M2  7  (ML  (Liste  5  8  3))))
+    (M2  4  (M2  7  (M2  5  (ML  (Liste  8  3)))))
+
+
+# Déroulement des appels
+
+    (ML  (Liste  4  7  5  8  3))
+    (M2  4  (ML  (Liste  7  5  8  3)))
+    (M2  4  (M2  7  (ML  (Liste  5  8  3))))
+    (M2  4  (M2  7  (M2  5  (ML  (Liste  8  3)))))
+    (M2  4  (M2  7  (M2  5  (M2  8  (ML  (Liste  3))))))
+
+
+# Déroulement des appels
+
+    (ML  (Liste  4  7  5  8  3))
+    (M2  4  (ML  (Liste  7  5  8  3)))
+    (M2  4  (M2  7  (ML  (Liste  5  8  3))))
+    (M2  4  (M2  7  (M2  5  (ML  (Liste  8  3)))))
+    (M2  4  (M2  7  (M2  5  (M2  8  (ML  (Liste  3))))))
+    (M2  4  (M2  7  (M2  5  (M2  8  3))))
+
+
+# Déroulement des appels
+
+    (ML  (Liste  4  7  5  8  3))
+    (M2  4  (ML  (Liste  7  5  8  3)))
+    (M2  4  (M2  7  (ML  (Liste  5  8  3))))
+    (M2  4  (M2  7  (M2  5  (ML  (Liste  8  3)))))
+    (M2  4  (M2  7  (M2  5  (M2  8  (ML  (Liste  3))))))
+    (M2  4  (M2  7  (M2  5  (M2  8  3))))
+    (M2  4  (M2  7  (M2  5  8)))
+
+
+# Déroulement des appels
+
+    (ML  (Liste  4  7  5  8  3))
+    (M2  4  (ML  (Liste  7  5  8  3)))
+    (M2  4  (M2  7  (ML  (Liste  5  8  3))))
+    (M2  4  (M2  7  (M2  5  (ML  (Liste  8  3)))))
+    (M2  4  (M2  7  (M2  5  (M2  8  (ML  (Liste  3))))))
+    (M2  4  (M2  7  (M2  5  (M2  8  3))))
+    (M2  4  (M2  7  (M2  5  8)))
+    (M2  4  (M2  7  8))
+
+
+# Déroulement des appels
+
+    (ML  (Liste  4  7  5  8  3))
+    (M2  4  (ML  (Liste  7  5  8  3)))
+    (M2  4  (M2  7  (ML  (Liste  5  8  3))))
+    (M2  4  (M2  7  (M2  5  (ML  (Liste  8  3)))))
+    (M2  4  (M2  7  (M2  5  (M2  8  (ML  (Liste  3))))))
+    (M2  4  (M2  7  (M2  5  (M2  8  3))))
+    (M2  4  (M2  7  (M2  5  8)))
+    (M2  4  (M2  7  8))
+    (M2  4  8)
+
+
+# Déroulement des appels
+
+    (ML  (Liste  4  7  5  8  3))
+    (M2  4  (ML  (Liste  7  5  8  3)))
+    (M2  4  (M2  7  (ML  (Liste  5  8  3))))
+    (M2  4  (M2  7  (M2  5  (ML  (Liste  8  3)))))
+    (M2  4  (M2  7  (M2  5  (M2  8  (ML  (Liste  3))))))
+    (M2  4  (M2  7  (M2  5  (M2  8  3))))
+    (M2  4  (M2  7  (M2  5  8)))
+    (M2  4  (M2  7  8))
+    (M2  4  8)
+    8
+
+---
+
+## Récursion
+
+* Mise en abîme
+* On peut définir récursivement :
+    * une pile d’assiettes est soit
+        * une assiette
+        * une assiette sur une pile d’assiettes
+    * une liste est soit
+        * vide
+        * soit composée
+            * d’une valeur (la « tête »)
+            * et d’une liste (la « queue »)
+* Démonstration par récurrence en terminale
 
 ---
 
@@ -288,28 +502,27 @@
 * Savoir regarder avant de dessiner.
 * Savoir écouter avant de jouer ou écrire de la musique.
 * Savoir lire des programmes avant d’en écrire.
-* Connaître les **instructions de base**.
-* Savoir les **combiner**.
+    * Connaître les **instructions de base**.
+    * Savoir les **combiner**.
 
 ---
 
 ## L’algorithimique, c’est…
 
 <ul style="font-size:150%;">
-<li style="margin-top:1em;">…combiner des actions de **bas niveau**…</li>
-<li style="margin-top:1em;">…pour résoudre des problèmes de plus **haut niveau**.</li>
+<li style="margin-top:1em;">combiner des actions de **bas niveau**</li>
+<li style="margin-top:1em;">pour résoudre des problèmes de plus **haut niveau**.</li>
 </ul>
 
 ---
 
-## Instructions de base :
+## Instructions de base au lycée
 
-* **variables** et **affectation** (calcul mental de l’ordi)
+* **affichages** (texte ou graphismes)
+* opérations mathématiques, comparaisons
 * structures **conditionnelles** : Si…Alors…(Sinon…)
 * structures **répétitives** : Repeter, Tant_que…Faire…
-* opérations mathématiques, comparaisons
-* **affichages** (texte ou graphismes)
-* **récursion** (voir programme de Terminale S)
+* **variables** et **affectation** (calcul mental de l’ordi)
 
 ---
 
