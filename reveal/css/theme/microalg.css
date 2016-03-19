@@ -49,6 +49,9 @@ body {
     max-width: none;
     max-height: none; }
 
+.reveal .nocenter img {
+    display: inline; }
+
 /* Original default.css */
 
 .reveal .controls div.navigate-left,
