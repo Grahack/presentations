@@ -30,6 +30,7 @@ body {
 .reveal code {
     margin: 0 2px;
     padding: 0px 5px;
+    background-color: #eee;
     white-space: nowrap; }
 
 .reveal pre code {
