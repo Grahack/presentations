@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>Formation Python au lycée</title>
+        <link rel="stylesheet" href="reveal/css/reveal.min.css">
+        <link rel="stylesheet" href="reveal/css/theme/microalg.css" id="theme">
+
+        <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+        <script>
+            document.write( '<link rel="stylesheet" href="reveal/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="reveal/lib/js/html5shiv.js"></script>
+        <![endif]-->
+
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="jquery.min.js"><\/script>')</script>
+        <link rel="icon" href="visuels/logo_microalg.ico" />
+
+        <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            extensions: ["tex2jax.js","fp.js"],
+            MathMenu: {
+                showLocale: false,
+            },
+            jax: ["input/TeX","output/HTML-CSS"],
+            tex2jax: {
+                inlineMath: [['$','$']],
+                displayMath: [['$$','$$']],
+                }
+            });
+        </script>
+        <script type="text/javascript" src="mathjax/MathJax.js?locale=fr"></script>
+    </head>
+
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section data-markdown data-separator="^\n----*\n" data-vertical="^\n\n" data-charset="utf-8">
+
+                    <script type="text/template">
+&nbsp;
+
+# Python pour les maths, au lycée
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+<div style="text-align: right; font-size: 75%;">C.Gragnic et P.Vairé, 12 juin 2017</div>
+<div style="text-align: right;">Lycée Carcouët</div>
+
+---
+
+# Création
+
+* 1991
+* Guido van Rossum, universitaire hollandais
+* Pas parti de zéro…
+* …mais assez nouveau et assez différent des C, C++, C#, Java, PHP...
+
+---
+
+# Dans le style pythonique
+
+* Conçu pour l’industrie
+* Pour que les programmeurs soient productifs
+* Donc pas pour l’enseignement !
+* Langage très vaste
+* A des côtés **idiots** et d’autres de **rusés**.
+
+---
+
+# Dans le style pythonique
+
+* **idiot**
+    * qui vise à l’uniformisation
+    * que tout le monde peut comprendre
+    * comme MicroAlg !
+* **rusé**
+    * qui permet des finesses
+    * qui rend le langage concis ou malléable
+
+---
+
+# Dans le style pythonique
+
+Un exemple de code « rusé » :
+
+* `[x**2 for x in range(10) if x%2]`
+* `[1, 9, 25, 49, 81]`
+* $\\left\\{x^2, x \\in \\left[\\left[0, 9\\right]\\right], x~\\text{étant impair} \\right\\}$.
+
+---
+
+# Dans le style pythonique
+
+* Les *pythonistas* codent en suivant certains principes,
+* décrits dans le [PEP 20](https://www.python.org/dev/peps/pep-0020/)
+* un PEP ?
+
+---
+
+# Dans le style pythonique
+
+> Beautiful is better than ugly.  
+> Explicit is better than implicit.  
+> Simple is better than complex.  
+> Complex is better than complicated.  
+> Flat is better than nested.  
+> Sparse is better than dense.  
+> Readability counts.  
+> Special cases aren't special enough to break the rules.  
+> Although practicality beats purity.  
+> ...
+
+---
+
+# Dans le style pythonique
+
+> Le beau est préférable au laid.  
+> L'explicite est préférable à l'implicite.  
+> Le simple est préférable au complexe.  
+> Le complexe est préférable au compliqué.  
+> Le plat est préférable à l'imbriqué.  
+> L'aéré est préférable au compact.  
+> La lisibilité compte.  
+> Les cas particuliers ne sont pas suffisamment particuliers pour casser la règle.  
+> Même si l'aspect pratique doit prendre le pas sur la pureté.  
+> …
+
+La traduction est tirée de [cette page](https://openclassrooms.com/courses/apprenez-a-programmer-en-python/de-bonnes-pratiques).
+
+---
+
+# Dans le style pythonique
+
+Au niveau de la forme, c’est le [PEP 8](https://www.python.org/dev/peps/pep-0008/).
+
+---
+
+# Enseignement
+
+C’est ce langage que l’inspection générale a choisi dans le double but :
+
+1. d’enseigner l’algorithmique ;
+1. d’enseigner la programmation
+
+---
+
+# Enseignement
+
+Cependant, difficile de concilier la pythonicité et l’algorithmique de niveau lycée.
+
+---
+
+# Enseignement
+
+* Notez que M.Chéno a déconseillé l’utilisation d’EduPython,
+* il faut utiliser une version récente de Python 3.
+
+---
+
+# Mise en œuvre
+
+Quelques idées pour travailler avec Python :
+
+1. Jupyter (<https://try.jupyter.org/>)
+1. IDLE (fourni avec la distribution officielle de Python, écrit en Python)
+1. Brython est une version de Python entièrement codée en JavaScript:
+  1. <https://brython.info/tests/console.html>
+  1. <https://brython.info/tests/editor.html>
+  1. <http://profgra.org/lycee/brython.html>
+
+---
+
+# Mise en œuvre
+
+Ouvrir IDLE et taper :
+
+    >>> 42
+    42
+    >>> print(42)
+    42
+
+---
+
+# Mise en œuvre
+
+Puis nouveau fichier avec :
+
+    print(42)
+
+et appuyer sur `F5`
+
+---
+
+# Mise en œuvre
+
+La suite est dans le document disponible en [html](http://profgra.org/formation_python.html) et en [ipynb](http://profgra.org/formation_python.ipynb).
+
+</script>
+                </section>
+            </div>
+        </div>
+
+        <script src="reveal/lib/js/head.min.js"></script>
+        <script src="reveal/js/reveal.min.js"></script>
+
+        <script>
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                help: true,
+                progress: true,
+                slideNumber: true,
+                history: true,
+                center: false,
+
+                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'none', // default/cube/page/concave/zoom/linear/fade/none
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'reveal/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'reveal/plugin/markdown/markdown.js',
+                        condition: function() { return !!document.querySelector( '[data-markdown]' ); },
+                        // All list items are fragments, thanks to
+                        // http://stackoverflow.com/questions/13705848/fragments-in-reveal-js-using-markdown?rq=1#15354240
+                        callback: function() {
+                            Array.prototype.forEach.call(document.querySelectorAll('ul > li, ol > li'),
+                            function(ele){ if (ele.className != 'nofragment') ele.className = 'fragment';});
+                        } },
+                    { src: 'reveal/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'reveal/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'plugin/math/math.js', async: true }
+                ],
+                math: {
+                        mathjax: 'mathjax/MathJax.js',
+                        config: 'TeX-AMS_HTML-full'},
+                minScale: 1,
+                maxScale: 1
+            });
+        </script>
+    </body>
+</html>
