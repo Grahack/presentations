@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>JN APMEP 2017 - Surprenantes</title>
+        <link rel="stylesheet" href="reveal/css/reveal.min.css">
+        <link rel="stylesheet" href="reveal/css/theme/microalg.css" id="theme">
+
+        <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+        <script>
+            document.write( '<link rel="stylesheet" href="reveal/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="reveal/lib/js/html5shiv.js"></script>
+        <![endif]-->
+
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="jquery.min.js"><\/script>')</script>
+        <link rel="icon" href="img/logo_microalg.ico" />
+
+        <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            extensions: ["tex2jax.js","fp.js"],
+            MathMenu: {
+                showLocale: false,
+            },
+            jax: ["input/TeX","output/HTML-CSS"],
+            tex2jax: {
+                inlineMath: [['$','$']],
+                displayMath: [['$$','$$']],
+                }
+            });
+        </script>
+        <script type="text/javascript" src="mathjax/MathJax.js?locale=fr"></script>
+    </head>
+
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section data-markdown data-separator="^\n----*\n" data-vertical="^\n\n" data-charset="utf-8">
+
+                    <script type="text/template">
+&nbsp;
+
+# La notation polonaise, une versatilité surpreNantes
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+<div style="text-align: right; font-size: 75%;">C.Gragnic, 22 octobre</div>
+<div style="text-align: right;">JN APMEP 2017</div>
+
+---
+
+## Travaux et instructions
+
+Supposons qu’un travail à effectuer $T$ :
+
+* nécessite des informations $i_1$, $i_2$… $i_n$
+* on appelle $n$ l’*arité* de $T$
+* produise une information $i$
+
+---
+
+## Travaux et instructions
+
+Si c’est possible, ce travail $T$ pourrait de plus :
+
+* prendre d’autres informations dans l’environnement
+* agir sur l’environnement de celui qui l’effectue.
+
+---
+
+## Travaux et instructions
+
+Notations possibles :
+
+* notation **infixée**
+  * $i = i_1 T i_2$
+* notation **postfixée**
+  * ou notation *polonaise inversée* (*RPN* in english)
+  * $i = i_1 i_2 T$
+* notation **préfixée**
+  * $i = T i_1 i_2$
+
+---
+
+## Travaux et instructions
+
+Une *instruction* décrit « ce qu’il y a ça faire » :
+
+* exécuter le travail $T$ sur les informations $i_1$ et $i_2$.
+
+---
+
+## Imbrication des travaux
+
+Besoin potentiel :
+
+* utiliser…
+  * $i$ (résultat du travail précédent)
+  * $i_3$ une autre information
+*  comme informations pour un travail $T'$
+  * $T'$ produisant une information $i'$
+
+---
+
+## Imbrication des travaux
+
+Comme pour $T$, on note :
+
+* $i' = i T i_3$ en notation *infixée*
+* $i' = i i_3 T$ en notation *postfixée*
+* $i' = T i i_3$ en notation *préfixée*
+
+---
+
+## Imbrication des travaux
+
+En écrivant $i$ avec $T$, $i_1$ et $i_2$ :
+
+* $i' = (i_1 T i_2) T' i_3$
+* $i' = (i_1 i_2 T) i_3 T'$
+* $i' = T' (T i_1 i_2) i_3$
+
+---
+
+## Imbrication des travaux
+
+Le parenthèsage :
+
+* nécessaire pour notation infixée
+  * $i' = (i_1 T i_2) T' i_3$
+* pour les autres, nécessaire seulement si l’arité des travaux $T$ et $T'$
+  est inconnue.
+  * $i' = (i_1 i_2 T) i_3 T'$
+  * $i' = T' (T i_1 i_2) i_3$
+* facilite néammoins la lecture
+
+---
+
+## Imbrication des travaux
+
+Un *programme* est une ensemble d’instructions
+
+* mises *les unes à la suite des autres*
+* ou imbriquées
+
+---
+
+## Préfixée à parenthèses
+
+C’est mon choix, le choix de Lisp.
+
+Avec un bon vocabulaire, peut se rapprocher du langage parlé.
+
+* délimitation des *informations*
+  * par des espaces et/ou des guillemets
+  * par d’éventuels retours à la ligne par souci de présentation
+* parenthèsage systématique
+  * des instructions à imbriquer
+  * des instructions séquentielles
+
+---
+
+## Préfixée à parenthèses
+
+Un exemple :
+
+    (Ouvrir "les volets")
+    (Boire (Verser_dans "tasse"
+                        (Chauffer "reste café")
+                        "sucre"))
+    
+Où `Verser_dans` attend comme informations :
+
+* $i_1$ le récipient
+* $i_2$ un premier ingrédient
+* $i_3$ un éventuel autre ingrédient
+* $i_4$ un éventuel autre ingrédient
+* …
+
+---
+
+## Préfixée à parenthèses
+
+D’autres exemples plus mathématiques :
+
+    (Calculer (Somme (Produit 2 3) 1))
+
+    (Opposé (Quotient (Diff (Produit a (Racine b))
+                            (Image_par f (Inverse c)))
+                      (Carré (somme x y z))))
+
+---
+
+## But de l’atelier
+
+* Définir progressivement un tel langage,
+* à l’aide de MicroAlg,
+* qui est lui-même un tel langage.
+
+---
+
+## But de l’atelier
+
+* La poule ou l’œuf ?
+* Modifications sur MicroAlg
+
+---
+
+## MicroAlg
+
+* Travaux $T$ :
+  * souvent désignés par un verbe
+  * désormais appelés des *commandes*
+* Informations $i_k$ :
+  * appelées des *valeurs*
+  * nombres ou fragments de texte
+  * retours d’autres commandes
+* Parenthèses
+  * colorées
+
+---
+
+## MicroAlg
+
+Commandes prédéfinies :
+
+* `Definir` et `Retourner`
+  * permettent de créer de nouvelles commandes
+* `Afficher`
+  * permet d’afficher des résultats à l’écran
+* `Joindre`
+  * concatène ou « met bout à bout » des valeurs
+
+---
+
+## Travaux pratiques !
+
+Rendez-vous sur cette
+[page sur la galerie de MicroAlg](http://galerie.microalg.info/profgra:tests:surprenante).
+
+</script>
+                </section>
+            </div>
+        </div>
+
+        <script src="reveal/lib/js/head.min.js"></script>
+        <script src="reveal/js/reveal.min.js"></script>
+
+        <script>
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                help: true,
+                progress: true,
+                slideNumber: true,
+                history: true,
+                center: false,
+
+                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'none', // default/cube/page/concave/zoom/linear/fade/none
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'reveal/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'reveal/plugin/markdown/markdown.js',
+                        condition: function() { return !!document.querySelector( '[data-markdown]' ); },
+                        // All list items are fragments, thanks to
+                        // http://stackoverflow.com/questions/13705848/fragments-in-reveal-js-using-markdown?rq=1#15354240
+                        callback: function() {
+                            Array.prototype.forEach.call(document.querySelectorAll('ul > li, ol > li'),
+                            function(ele){ if (ele.className != 'nofragment') ele.className = 'fragment';});
+                        } },
+                    { src: 'reveal/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'reveal/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'plugin/math/math.js', async: true }
+                ],
+                math: {
+                        mathjax: 'mathjax/MathJax.js',
+                        config: 'TeX-AMS_HTML-full'},
+                minScale: 1,
+                maxScale: 1
+            });
+        </script>
+    </body>
+</html>
