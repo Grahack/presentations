@@ -60,6 +60,14 @@
 
 ---
 
+## But
+
+* Créer deux petits langages
+* Vous motiver pour en créer d’autres !
+  * Idée d’un langage pour les maths
+
+---
+
 ## Travaux et instructions
 
 Supposons qu’un travail à effectuer $T$ :
@@ -115,11 +123,11 @@ Besoin potentiel :
 
 ## Imbrication des travaux
 
-Comme pour $T$, on note :
+De la même façon qu’avec $T$, on note :
 
-* $i' = i T i_3$ en notation *infixée*
-* $i' = i i_3 T$ en notation *postfixée*
-* $i' = T i i_3$ en notation *préfixée*
+* $i' = i T' i_3$ en notation *infixée*
+* $i' = i i_3 T'$ en notation *postfixée*
+* $i' = T' i i_3$ en notation *préfixée*
 
 ---
 
@@ -127,9 +135,12 @@ Comme pour $T$, on note :
 
 En écrivant $i$ avec $T$, $i_1$ et $i_2$ :
 
-* $i' = (i_1 T i_2) T' i_3$
-* $i' = (i_1 i_2 T) i_3 T'$
-* $i' = T' (T i_1 i_2) i_3$
+* $i' = i T' i_3$ en notation *infixée*
+  * $i' = (i_1 T i_2) T' i_3$
+* $i' = i i_3 T'$ en notation *postfixée*
+  * $i' = (i_1 i_2 T) i_3 T'$
+* $i' = T' i i_3$ en notation *préfixée*
+  * $i' = T' (T i_1 i_2) i_3$
 
 ---
 
@@ -147,20 +158,25 @@ Le parenthèsage :
 
 ---
 
-## Imbrication des travaux
+## Programmes
 
 Un *programme* est une ensemble d’instructions
 
-* mises *les unes à la suite des autres*
-* ou imbriquées
+* *séquentielles*, ou mises *les unes à la suite des autres*
+* et/ou imbriquées
 
 ---
 
 ## Préfixée à parenthèses
 
-C’est mon choix, le choix de Lisp.
+C’est mon choix !
 
-Avec un bon vocabulaire, peut se rapprocher du langage parlé.
+* Un plat réchauffé : Lisp.
+* Avec un bon vocabulaire, peut se rapprocher du langage parlé.
+
+---
+
+## Préfixée à parenthèses
 
 * délimitation des *informations*
   * par des espaces et/ou des guillemets
@@ -187,6 +203,12 @@ Où `Verser_dans` attend comme informations :
 * $i_3$ un éventuel autre ingrédient
 * $i_4$ un éventuel autre ingrédient
 * …
+
+---
+
+## Préfixée à parenthèses
+
+![parcours en profondeur suffixe](img/Sorted_binary_tree_postorder.svg.png)
 
 ---
 
