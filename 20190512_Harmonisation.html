@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>Harmonisation de la gamme majeure</title>
+        <link rel="stylesheet" href="reveal/css/reveal.css">
+        <link rel="stylesheet" href="reveal/css/theme/microalg.css" id="theme">
+
+        <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+        <script>
+            document.write( '<link rel="stylesheet" href="reveal/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="reveal/lib/js/html5shiv.js"></script>
+        <![endif]-->
+
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="jquery.min.js"><\/script>')</script>
+        <link rel="icon" href="img/logo_microalg.ico" />
+
+        <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            extensions: ["tex2jax.js","fp.js"],
+            MathMenu: {
+                showLocale: false,
+            },
+            jax: ["input/TeX","output/HTML-CSS"],
+            tex2jax: {
+                inlineMath: [['$','$']],
+                displayMath: [['$$','$$']],
+                }
+            });
+        </script>
+        <script type="text/javascript" src="mathjax/MathJax.js?locale=fr"></script>
+        <style type="text/css">
+pre code {
+  background-color: white !important;
+}
+        </style>
+    </head>
+
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section data-markdown data-separator="^\n----*\n" data-vertical="^\n\n" data-charset="utf-8">
+
+                    <script type="text/template">
+&nbsp;
+
+# Harmonisation de la gamme majeure
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+<div style="text-align: right;">Pour (surtout) ma mère</div>
+<div style="text-align: right; font-size: 75%;">C.Gragnic, 12 mai 2019</div>
+
+---
+
+## But
+
+* La gamme majeure est très présente dans la musique occidentale.
+* De sa structure découle une série de 7 accords.
+* En plus des qualités intrinsèques (majeur, mineur…), chacun a une
+  « couleur » et « rôle » propres dans une tonalité.
+* Ce diaporama explique la construction de ces 7 accords.
+* Ces structures permettent d’organiser le travail du lien entre ces couleurs
+  ou rôles à leur jeu sur l’instrument.
+
+---
+
+&nbsp;
+
+    Do
+     
+    Ré
+     
+    Mi
+     
+    Fa
+     
+    Sol
+     
+    La
+     
+    Si
+     
+    Do
+
+Voici la gamme majeure de Do.
+
+---
+
+&nbsp;
+
+    Do
+     
+    Ré
+     
+    Mi
+       )
+    Fa
+     
+    Sol
+     
+    La
+     
+    Si
+       )
+    Do
+
+Sur un piano, il n’y a pas de touche noire entre ces notes, donc pas de note
+intermédiaire avec ♯ ou ♭. Sur une guitare, ces notes sont côte à côte et
+l’écart entre ces notes est donc 1/2 ton.
+
+---
+
+&nbsp;
+
+    Do
+       )
+    Ré
+       )
+    Mi
+     
+    Fa
+       )
+    Sol
+       )
+    La
+       )
+    Si
+     
+    Do
+
+Sur un piano, il y a une touche noire entre ces notes, donc une note
+intermédiaire avec ♯ ou ♭. Sur une guitare, ces notes sont séparées par une
+case et l’écart entre ces notes est donc 1 ton (= 2 demi-tons).
+
+---
+
+&nbsp;
+
+    Do
+       ) 2
+    Ré
+       ) 2
+    Mi
+       ) 1
+    Fa
+       ) 2
+    Sol
+       ) 2
+    La
+       ) 2
+    Si
+       ) 1
+    Do
+
+Ici on a les écarts entre les notes de la gamme de Do, comptés en 1/2 tons.
+
+---
+
+&nbsp;
+
+    Do      <-- on garde
+
+    (Ré)    <-- on jette
+
+    Mi      <-- on garde
+       
+    (Fa)    <-- on jette
+       
+    Sol     <-- on garde
+
+Les accords se construisent en sautant une note dans la gamme.  
+On part de la fondamentale, la deuxième note est la tièrce et la troisième
+est la quinte.
+
+---
+
+&nbsp;
+
+    Do
+
+     4
+
+    Mi
+       
+     3
+       
+    Sol
+
+Voici l’accord de Do avec les écarts en 1/2 tons entre les notes.
+
+---
+
+&nbsp;
+
+    Do
+
+     4   Ré
+
+    Mi    3
+       
+     3   Fa
+       
+    Sol   4
+
+         La
+       
+Pareil pour l’accord de Ré, la tierce est Fa, la quinte est La.
+
+---
+
+&nbsp;
+
+    Do
+
+     4   Ré
+
+    Mi    3   Mi
+       
+     3   Fa    3   Fa...
+       
+    Sol   4   Sol
+
+         La    4
+
+              Si
+
+Le reste est laissé en exercice !
+
+On obtient des accords :
+
+* « 4+3 », dits « majeurs » (pas de lettre après dans la notation),
+* « 3+4 », dits « mineurs » (un m après le nom de la note dans la notation),
+* « 3+3 », dits « diminués » (très peu utilisés, on les oublie pour l’instant).
+
+---
+
+&nbsp;
+
+    Do     Ré m     Mi m     Fa     Sol     La m      Si dim
+    I      II m    III m     IV      V      VI m      VII dim
+
+Voici la fameuse « harmonisation de la gamme majeure de do » !
+Les notes utilisées sont à trouver parmi les notes de cette gamme.
+
+---
+
+On peut tout reprendre avec la gamme majeure de Sol.
+
+On doit :
+
+* partir de la fondamentale Sol,
+* respecter les écarts 2 2 1 2 2 2 1,
+* passer d’un nom de note à un autre.
+
+---
+
+&nbsp;
+
+    Sol
+
+---
+
+&nbsp;
+
+    Sol
+       ) 2
+    ?
+
+---
+
+&nbsp;
+
+    Sol
+       ) 2
+    La
+
+---
+
+&nbsp;
+
+    Sol
+       ) 2
+    La
+       ) 2
+    ?
+
+---
+
+&nbsp;
+
+    Sol
+       ) 2
+    La
+       ) 2
+    Si
+
+---
+
+&nbsp;
+
+    Sol
+       ) 2
+    La
+       ) 2
+    Si
+       ) 1
+    ?
+
+---
+
+&nbsp;
+
+    Sol
+       ) 2
+    La
+       ) 2
+    Si
+       ) 1
+    Do
+
+---
+
+&nbsp;
+
+    Sol
+       ) 2
+    La
+       ) 2
+    Si
+       ) 1
+    Do
+       ) 2
+
+---
+
+Harmo de la gamme majeure de Sol.
+Les notes utilisées sont à trouver parmi les notes de cette gamme.
+
+---
+
+Idem avec la gamme de Ré majeur
+</script>
+                </section>
+            </div>
+        </div>
+
+        <script src="reveal/js/reveal.js"></script>
+
+        <script>
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                help: true,
+                progress: true,
+                slideNumber: true,
+                history: true,
+                center: false,
+
+                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'none', // default/cube/page/concave/zoom/linear/fade/none
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'reveal/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'reveal/plugin/markdown/markdown.js',
+                        condition: function() { return !!document.querySelector( '[data-markdown]' ); },
+                        // All list items are fragments, thanks to
+                        // http://stackoverflow.com/questions/13705848/fragments-in-reveal-js-using-markdown?rq=1#15354240
+                        callback: function() {
+                            Array.prototype.forEach.call(document.querySelectorAll('ul > li, ol > li'),
+                            function(ele){ if (ele.className != 'nofragment') ele.className = 'fragment';});
+                        } },
+                    { src: 'reveal/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'reveal/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'reveal/plugin/math/math.js', async: true }
+                ],
+                math: {
+                        mathjax: 'mathjax/MathJax.js',
+                        config: 'TeX-AMS_HTML-full'},
+                minScale: 1,
+                maxScale: 1
+            });
+        </script>
+    </body>
+</html>
